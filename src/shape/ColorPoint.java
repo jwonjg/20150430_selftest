@@ -17,7 +17,8 @@ public class ColorPoint extends Point {
 	}
 
 	@Override
-	public void show() {
-		System.out.println("좌표[x="+super.getX()+", y="+super.getY()+", color="+color+"]에 점을 그렸습니다.");
+	public void visible(boolean isVisible) {
+		if(!isVisible) System.out.println("좌표[x="+getX()+", y="+getY()+"]에 "+color+"색 점을 지웠습니다.");
+		else System.out.println("좌표[x="+getX()+", y="+getY()+"]에 "+color+"색 점을 그렸습니다.");
 	}
 }

@@ -1,6 +1,6 @@
 package shape;
 
-public class Point implements Drawable{
+public class Point implements Drawable, Visible{
 	private int x;
 	private int y;
 
@@ -22,12 +22,15 @@ public class Point implements Drawable{
 	public void setY(int y) {
 		this.y = y;
 	}
-	
-	public void show() {
-		System.out.println("좌표[x="+x+", y="+y+"]에 점을 그렸습니다.");
+
+	@Override	
+	public void draw() {
+		System.out.println("좌표[x="+x+", y="+y+"]에 그린 점을 그림판에 저장합니다.");
 	}
 
 	@Override
-	public void draw() {
+	public void visible(boolean isVisible) {
+		if(!isVisible) System.out.println("좌표[x="+x+", y="+y+"]에 점을 지웠습니다.");
+		else System.out.println("좌표[x="+x+", y="+y+"]에 점을 그렸습니다.");
 	}
 }
